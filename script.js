@@ -1,18 +1,16 @@
-// 1. переменная со начением числа
-let num = 266219
-let inString = String(num)
+"use strict";
 
-// 2. произведение чисел
-let result = 1; 
-for(let i = 0; i < inString.length; i++) {
-  result *= +inString[i]
+const forString = "Привет";
+
+const editingLine = function (text) {
+	let notification = null;
+  if (text === Number()) {
+		notification = "Ввод не верный, необходимо ввести текст";
+	} else if (text.length > 30) {
+		notification = text.slice(0, 30).concat("...");
+	} else {
+		notification = text.trim();
+	}
 }
-console.log(result);
 
-// 3. Полученный результат возвести в степень 3
-let raisedInDegree = result**3
-console.log(raisedInDegree);
-
-// 4. Первые 2 цифры полученного числа
-let firstTwoDigits = +String(raisedInDegree).slice(0,2);
-console.log(firstTwoDigits);
+editingLine(forString);
