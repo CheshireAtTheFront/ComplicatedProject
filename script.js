@@ -3,14 +3,14 @@
 const forString = "Привет";
 
 const editingLine = function (text) {
-	let notification = null;
-  if (text === Number()) {
-		notification = "Ввод не верный, необходимо ввести текст";
-	} else if (text.length > 30) {
-		notification = text.slice(0, 30).concat("...");
+  if (text.trim().length > 30) {
+		console.log(text.trim().slice(0, 30).concat("..."));
+	} else if (typeof text === 'string') {
+		console.log(text.trim());
 	} else {
-		notification = text.trim();
+		console.log("Ввод не верный, необходимо ввести текст");
 	}
+	return text
 }
 
 editingLine(forString);
