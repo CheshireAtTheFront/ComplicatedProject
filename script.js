@@ -1,18 +1,25 @@
-// 1. переменная со начением числа
-let num = 266219
-let inString = String(num)
+// Задача 1
+// создать массив 
+// — Записать в него 7 любых многозначных чисел в виде строк
+let arr = ["25", "310", "543", "65", "44", "100", "133"];
+let str = "";
 
-// 2. произведение чисел
-let result = 1; 
-for(let i = 0; i < inString.length; i++) {
-  result *= +inString[i]
+for (let i = 0; i < arr.length; i++) {
+  let splitArrIndex = arr[i].split("");
+  if (splitArrIndex[0] === "2" || splitArrIndex[0] === "4") {
+    str += arr[i] + " "; 
+  }
 }
-console.log(result);
+// — Вывести в консоль только те, что начинаются с цифры 2 или 4 (Должны присутствовать в массиве)
+// console.log(str);
 
-// 3. Полученный результат возвести в степень 3
-let raisedInDegree = result**3
-console.log(raisedInDegree);
+// Задача 2
+// Вывести в столбик все простые числа от 1 до 100 (сделать при помощи цикла)
+PrimeNum: 
+for (let i = 2; i <= 100; i++) {
+  for (let j = 2; j < i; j++) {
+    if (i % j === 0) continue PrimeNum
+  }
+  console.log(`Простое число: ${i} Делитель этого числа: 1 и ${i}`);
+}
 
-// 4. Первые 2 цифры полученного числа
-let firstTwoDigits = +String(raisedInDegree).slice(0,2);
-console.log(firstTwoDigits);
